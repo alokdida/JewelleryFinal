@@ -1,0 +1,9 @@
+/// <reference path="jquery.d.ts" />
+/// <reference path="angular.d.ts" />
+/// <reference path="angular-ui-router.d.ts" />
+/// <reference path="Q.d.ts"/>
+/// <reference path="sdk.d.ts" />
+/// <reference path="moment.d.ts" />
+/// <reference path="es6-promise.d.ts" />
+/// <reference path="stacktrace-js.d.ts" />
+/// <reference path="ui-grid.d.ts" />
