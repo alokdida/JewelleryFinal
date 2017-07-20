@@ -1,0 +1,4 @@
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Common\bin\Debug\Jewellery.Common.dll
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Common\bin\Debug\Jewellery.Common.pdb
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Common\obj\Debug\Jewellery.Common.dll
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Common\obj\Debug\Jewellery.Common.pdb

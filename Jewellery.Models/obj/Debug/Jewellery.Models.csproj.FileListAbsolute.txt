@@ -1,0 +1,12 @@
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\bin\Debug\Jewellery.Models.dll.config
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\bin\Debug\Jewellery.Models.dll
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\bin\Debug\Jewellery.Models.pdb
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\bin\Debug\EntityFramework.dll
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\bin\Debug\EntityFramework.SqlServer.dll
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\bin\Debug\Jewellery.Common.dll
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\bin\Debug\Jewellery.Common.pdb
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\bin\Debug\EntityFramework.xml
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\bin\Debug\EntityFramework.SqlServer.xml
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\obj\Debug\Jewellery.Models.csprojResolveAssemblyReference.cache
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\obj\Debug\Jewellery.Models.dll
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\obj\Debug\Jewellery.Models.pdb
