@@ -10,3 +10,15 @@ F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\bin\Debug\Entity
 F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\obj\Debug\Jewellery.Models.csprojResolveAssemblyReference.cache
 F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\obj\Debug\Jewellery.Models.dll
 F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.Models\obj\Debug\Jewellery.Models.pdb
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\bin\Debug\Jewellery.Models.dll.config
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\bin\Debug\Jewellery.Models.dll
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\bin\Debug\Jewellery.Models.pdb
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\bin\Debug\EntityFramework.dll
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\bin\Debug\EntityFramework.SqlServer.dll
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\bin\Debug\Jewellery.Common.dll
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\bin\Debug\Jewellery.Common.pdb
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\bin\Debug\EntityFramework.xml
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\bin\Debug\EntityFramework.SqlServer.xml
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\obj\Debug\Jewellery.Models.csprojResolveAssemblyReference.cache
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\obj\Debug\Jewellery.Models.dll
+D:\Alok\tp\JewelleryFinal\Jewellery.Models\obj\Debug\Jewellery.Models.pdb
