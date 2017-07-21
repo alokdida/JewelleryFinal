@@ -7,12 +7,23 @@
 	<script src="external/jquery-3.1.1.min.js"></script>
 	<script src="external/angular.min.js"></script>
 	<script src="external/angular_ui_router.min.js"></script>
+    <script src="external/bootstrap.min.js"></script>
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 	<div ng-app="apptusJewelleryModule">
 		<div ui-view></div>
 	</div>
 	<script src="common/JewelleryModule.js"></script>
-	<script src="controller/HomeController.js"></script>
+    <script src="common/utilities/enum.js"></script>
+    <script src="Designs/model/Design.js"></script>
+	<script src="common/controller/HomeController.js"></script>
+    <script src="Designs/controllers/DesignController.js"></script>
+    <script src="common/directives/DesignDirective.js"></script>
+    <script src="common/directives/ItemDirective.js"></script>
+    <script src="common/services/CRUDOperations.js"></script>
+    <script src="common/utilities/StringUtilities.js"></script>    
+    <script src="Designs/services/DesignerService.js"></script>
+    <script src="Items/service/ItemService.js"></script>
 </body>
 </html>

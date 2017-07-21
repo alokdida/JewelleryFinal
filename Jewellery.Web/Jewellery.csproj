@@ -105,6 +105,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="common\views\Home.html" />
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
     <Content Include="Content\themes\base\autocomplete.css" />
@@ -146,6 +150,9 @@
     <Content Include="Content\themes\base\tabs.css" />
     <Content Include="Content\themes\base\theme.css" />
     <Content Include="Content\themes\base\tooltip.css" />
+    <Content Include="Designs\views\Design.html" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Items\views\Item.html" />
     <Content Include="packages.config" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -158,6 +165,10 @@
     <Content Include="external\angular-route.min.js" />
     <Content Include="external\angular.js" />
     <Content Include="external\angular.min.js" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
     <None Include="external\jquery-3.1.1.intellisense.js" />
     <Content Include="external\angular_ui_router.js" />
     <Content Include="external\angular_ui_router.min.js" />
@@ -171,6 +182,10 @@
     <Content Include="external\angular-route.min.js.map" />
     <Content Include="external\angular-aria.min.js.map" />
     <Content Include="external\jquery-3.1.1.min.map" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -179,16 +194,25 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="external\bootstrap.js" />
+    <Content Include="external\bootstrap.min.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\" />
-    <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="common\directives\ItemDirective.ts" />
+    <TypeScriptCompile Include="common\directives\DesignDirective.ts" />
     <TypeScriptCompile Include="common\JewelleryModule.ts" />
-    <TypeScriptCompile Include="common\scripts\CRUDOperations.ts" />
-    <TypeScriptCompile Include="controller\HomeController.ts" />
+    <TypeScriptCompile Include="common\services\CRUDOperations.ts" />
+    <TypeScriptCompile Include="common\utilities\enum.ts" />
+    <TypeScriptCompile Include="common\utilities\StringUtilities.ts" />
+    <TypeScriptCompile Include="common\controller\HomeController.ts" />
+    <TypeScriptCompile Include="Designs\controllers\DesignController.ts" />
+    <TypeScriptCompile Include="Designs\model\Design.ts" />
+    <TypeScriptCompile Include="Designs\services\DesignerService.ts" />
+    <TypeScriptCompile Include="Items\service\ItemService.ts" />
     <TypeScriptCompile Include="Typings\angular-ui-router.d.ts" />
     <TypeScriptCompile Include="Typings\angular.d.ts" />
     <TypeScriptCompile Include="Typings\es6-promise.d.ts" />
