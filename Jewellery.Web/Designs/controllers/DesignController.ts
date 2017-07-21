@@ -1,49 +1,57 @@
 ﻿module Apptus.Jewellery.Controllers {
-    "use strict";
+	"use strict";
 
-    import Utilities = Apptus.Jewellery.Common.Utility;
-    export class DesignController {
-        static $inject = ["DesignService", "$scope"];
+	import Utilities = Apptus.Jewellery.Common.Utility;
+	export class DesignController {
+		static $inject = ["DesignService", "$scope"];
 
-        public designModel: Models.Design;
-        private designs: Models.Design[] = [];
+		private designModel: Models.Design;
+		private designs: Models.Design[] = [];
 
-        constructor(designService: Apptus.Jewellery.Services.DesignService, private $scope: any) {
-            this.designs = new Array();
-            this.GetDesigns();
-        }
+		constructor(private designService: Apptus.Jewellery.Services.DesignService, private $scope: any) {
+			this.designs = new Array();
+			$scope.ViewDesign = this.ViewDesign.bind(this);
+			$scope.CreateDesign = this.CreateDesign.bind(this);
+			this.GetDesigns();
+		}
 
-        public get Designs(): Models.Design[] {
-            return this.designs;
-        }
+		public get Designs(): Models.Design[] {
+			return this.designs;
+		}
 
-        public IsNameEmpty(): boolean {
-            return Utilities.StringUtilities.IsNullOrEmpty(this.designModel.Name);
-        }
+		public get Design(): Models.Design {
+			return this.designModel;
+		}
 
-        public IsDescriptionEmpty(): boolean {
-            return Utilities.StringUtilities.IsNullOrEmpty(this.designModel.Description);
-        }
+		public set Design(currentDesign: Models.Design) {
+			this.designModel = currentDesign;
+		}
 
-        public CreateDesign(): void {
+		public IsNameEmpty(): boolean {
+			return Utilities.StringUtilities.IsNullOrEmpty(this.designModel.Name);
+		}
 
-        }
+		public IsDescriptionEmpty(): boolean {
+			return Utilities.StringUtilities.IsNullOrEmpty(this.designModel.Description);
+		}
 
-        public ViewDesign(id: number): void {
-        }
+		public CreateDesign(): void {
+			if (!this.designModel.Id) {
+				this.designService
+				this.designModel = new Models.Design();
+			}
+		}
 
-        public GetDesigns(): void {
-            console.log('hi');
-            let sampleDesign: Models.Design = new Models.Design();
-            sampleDesign.Name = "Name1";
-            sampleDesign.Description = "Description1";
-            this.designs.push(sampleDesign);
-            sampleDesign = new Models.Design();
-            sampleDesign.Name = "Name2";
-            sampleDesign.Description = "Description2";
-            this.designs.push(sampleDesign);
-        }
-    }
+		public ViewDesign(selectedDesign: Models.Design): void {
+			this.designModel = selectedDesign;
+		}
 
-    JewelleryModule.controller("DesignController", DesignController);
+		public GetDesigns(): void {
+			this.designService.GetDesigns().then(function (response) {
+				this.designs = response;
+			});
+		}
+	}
+
+	JewelleryModule.controller("DesignController", DesignController);
 }

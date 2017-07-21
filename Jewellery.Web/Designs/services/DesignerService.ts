@@ -1,13 +1,26 @@
 ﻿module Apptus.Jewellery.Services {
-    "use strict";
+	"use strict";
 
-    export class DesignService {
-        static $inject = ["CRUDOperationService"];
+	export class DesignService {
+		static $inject = ["CRUDOperationService", "$q"];
 
-        constructor(crudOperationService: Apptus.Jewellery.Common.Services.CRUDOperation) {
+		constructor(private crudOperationService: Apptus.Jewellery.Common.Services.CRUDOperation,
+			private $q: ng.IQService,) {
 
-        }
-    }
+		}
 
-    JewelleryModule.service("DesignService", DesignService);
+		public GetDesigns(): ng.IPromise<Models.Design[]> {
+
+			return this.crudOperationService.Get("Design/").then(function (response:any) {
+				console.log(response);
+				let jsonResonse: Models.Design[] = JSON.parse(response.data);
+				return jsonResonse;
+			}, function (error) {
+				console.log(error);
+				return null;
+			});
+		}
+	}
+
+	JewelleryModule.service("DesignService", DesignService);
 }

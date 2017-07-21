@@ -10,12 +10,12 @@ var Apptus;
                 var CRUDOperation = (function () {
                     function CRUDOperation(httpService) {
                         this.httpService = httpService;
-                        this.baseURL = 'http://localhost:12345/api/';
+                        this.baseURL = 'http://localhost:12345/odata/';
                         this.config = {
                             headers: {
                                 'Accept': 'application/json',
                                 'Content-Type': 'application/json',
-                                'Accept-Encoding': 'gzip, deflate'
+                                'Access-Control-Allow-Origin': '*'
                             },
                             cache: false,
                             responseType: 'json'
@@ -24,17 +24,21 @@ var Apptus;
                     CRUDOperation.prototype.GetFullURL = function (url) {
                         return this.baseURL + url;
                     };
-                    CRUDOperation.prototype.Get = function (url, onSuccess, onFailure) {
-                        this.httpService.get(this.GetFullURL(url), this.config).success(onSuccess).error(onFailure);
+                    CRUDOperation.prototype.Get = function (url) {
+                        return this.httpService.get(this.GetFullURL(url), this.config).then(function (response) {
+                            return response;
+                        }, function (error) {
+                            return error;
+                        });
                     };
                     CRUDOperation.prototype.Update = function (url, data, onSuccess, onFailure) {
-                        this.httpService.put(this.GetFullURL(url), data, this.config).success(onSuccess).error(onFailure);
+                        this.httpService.put(this.GetFullURL(url), data, this.config).then(onSuccess, onFailure);
                     };
                     CRUDOperation.prototype.Create = function (url, data, onSuccess, onFailure) {
-                        this.httpService.post(this.GetFullURL(url), data, this.config).success(onSuccess).error(onFailure);
+                        this.httpService.post(this.GetFullURL(url), data, this.config).then(onSuccess, onFailure);
                     };
                     CRUDOperation.prototype.Delete = function (url, onSuccess, onFailure) {
-                        this.httpService.delete(this.GetFullURL(url), this.config).success(onSuccess).error(onFailure);
+                        this.httpService.delete(this.GetFullURL(url), this.config).then(onSuccess, onFailure);
                     };
                     CRUDOperation.$inject = ['$http'];
                     return CRUDOperation;

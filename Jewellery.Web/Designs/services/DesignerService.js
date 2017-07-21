@@ -6,9 +6,21 @@ var Apptus;
         (function (Services) {
             "use strict";
             var DesignService = (function () {
-                function DesignService(crudOperationService) {
+                function DesignService(crudOperationService, $q) {
+                    this.crudOperationService = crudOperationService;
+                    this.$q = $q;
                 }
-                DesignService.$inject = ["CRUDOperationService"];
+                DesignService.prototype.GetDesigns = function () {
+                    return this.crudOperationService.Get("Design/").then(function (response) {
+                        console.log(response);
+                        var jsonResonse = JSON.parse(response.data);
+                        return jsonResonse;
+                    }, function (error) {
+                        console.log(error);
+                        return null;
+                    });
+                };
+                DesignService.$inject = ["CRUDOperationService", "$q"];
                 return DesignService;
             }());
             Services.DesignService = DesignService;
