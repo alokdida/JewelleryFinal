@@ -20,6 +20,9 @@ var Apptus;
                     get: function () {
                         return this.designs;
                     },
+                    set: function (designList) {
+                        this.designs = designList;
+                    },
                     enumerable: true,
                     configurable: true
                 });
@@ -41,16 +44,23 @@ var Apptus;
                 };
                 DesignController.prototype.CreateDesign = function () {
                     if (!this.designModel.Id) {
-                        this.designService;
-                        this.designModel = new Jewellery.Models.Design();
+                        var current_1 = this;
+                        this.designService.CreateDesign(this.designModel).then(function (response) {
+                            current_1.designModel = new Jewellery.Models.Design();
+                            alert("Design is created successfully.");
+                            current_1.GetDesigns();
+                        }, function (errorResponse) {
+                            alert("There is a problem while creating a design.");
+                        });
                     }
                 };
                 DesignController.prototype.ViewDesign = function (selectedDesign) {
                     this.designModel = selectedDesign;
                 };
                 DesignController.prototype.GetDesigns = function () {
+                    var current = this;
                     this.designService.GetDesigns().then(function (response) {
-                        this.designs = response;
+                        current.designs = response;
                     });
                 };
                 DesignController.$inject = ["DesignService", "$scope"];

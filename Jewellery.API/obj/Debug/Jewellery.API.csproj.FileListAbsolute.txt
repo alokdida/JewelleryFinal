@@ -178,3 +178,6 @@ D:\Alok\tp\JewelleryFinal\Jewellery.API\bin\zh-Hant\Microsoft.Spatial.resources.
 D:\Alok\tp\JewelleryFinal\Jewellery.API\obj\Debug\Jewellery.API.csprojResolveAssemblyReference.cache
 D:\Alok\tp\JewelleryFinal\Jewellery.API\obj\Debug\Jewellery.API.dll
 D:\Alok\tp\JewelleryFinal\Jewellery.API\obj\Debug\Jewellery.API.pdb
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.API\bin\System.Web.Cors.dll
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.API\bin\System.Web.Http.Cors.dll
+F:\sTuDy\fReeLanCer\Apptus\Jewellery\Jewellery\Jewellery.API\bin\System.Web.Http.Cors.xml

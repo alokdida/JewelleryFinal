@@ -1,57 +1,68 @@
 ﻿module Apptus.Jewellery.Controllers {
-	"use strict";
+    "use strict";
 
-	import Utilities = Apptus.Jewellery.Common.Utility;
-	export class DesignController {
-		static $inject = ["DesignService", "$scope"];
+    import Utilities = Apptus.Jewellery.Common.Utility;
+    export class DesignController {
+        static $inject = ["DesignService", "$scope"];
 
-		private designModel: Models.Design;
-		private designs: Models.Design[] = [];
+        private designModel: Models.Design;
+        private designs: Models.Design[] = [];
 
-		constructor(private designService: Apptus.Jewellery.Services.DesignService, private $scope: any) {
-			this.designs = new Array();
-			$scope.ViewDesign = this.ViewDesign.bind(this);
-			$scope.CreateDesign = this.CreateDesign.bind(this);
-			this.GetDesigns();
-		}
+        constructor(private designService: Apptus.Jewellery.Services.DesignService, private $scope: any) {
+            this.designs = new Array();
+            $scope.ViewDesign = this.ViewDesign.bind(this);
+            $scope.CreateDesign = this.CreateDesign.bind(this);
+            this.GetDesigns();
+        }
 
-		public get Designs(): Models.Design[] {
-			return this.designs;
-		}
+        public get Designs(): Models.Design[] {
+            return this.designs;
+        }
 
-		public get Design(): Models.Design {
-			return this.designModel;
-		}
+        public set Designs(designList: Models.Design[]) {
+            this.designs = designList;
+        }
 
-		public set Design(currentDesign: Models.Design) {
-			this.designModel = currentDesign;
-		}
+        public get Design(): Models.Design {
+            return this.designModel;
+        }
 
-		public IsNameEmpty(): boolean {
-			return Utilities.StringUtilities.IsNullOrEmpty(this.designModel.Name);
-		}
+        public set Design(currentDesign: Models.Design) {
+            this.designModel = currentDesign;
+        }
 
-		public IsDescriptionEmpty(): boolean {
-			return Utilities.StringUtilities.IsNullOrEmpty(this.designModel.Description);
-		}
+        public IsNameEmpty(): boolean {
+            return Utilities.StringUtilities.IsNullOrEmpty(this.designModel.Name);
+        }
 
-		public CreateDesign(): void {
-			if (!this.designModel.Id) {
-				this.designService
-				this.designModel = new Models.Design();
-			}
-		}
+        public IsDescriptionEmpty(): boolean {
+            return Utilities.StringUtilities.IsNullOrEmpty(this.designModel.Description);
+        }
 
-		public ViewDesign(selectedDesign: Models.Design): void {
-			this.designModel = selectedDesign;
-		}
+        public CreateDesign(): void {
+            if (!this.designModel.Id) {
+                let current = this;
+                this.designService.CreateDesign(this.designModel).then(function (response: boolean) {
+                    current.designModel = new Models.Design();                    
+                    alert("Design is created successfully.");
+                    current.GetDesigns();
+                }, function (errorResponse: boolean) {
+                    alert("There is a problem while creating a design.");
+                    });
+            }
+        }
 
-		public GetDesigns(): void {
-			this.designService.GetDesigns().then(function (response) {
-				this.designs = response;
-			});
-		}
-	}
+        public ViewDesign(selectedDesign: Models.Design): void {
+            this.designModel = selectedDesign;
+        }
 
-	JewelleryModule.controller("DesignController", DesignController);
+        public GetDesigns(): void {
+            let current = this;
+            this.designService.GetDesigns().then(function (response) {
+                current.designs = response;
+            });
+        }
+    }
+
+    JewelleryModule.controller("DesignController", DesignController);
 }

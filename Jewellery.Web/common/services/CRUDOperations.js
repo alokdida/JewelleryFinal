@@ -14,8 +14,7 @@ var Apptus;
                         this.config = {
                             headers: {
                                 'Accept': 'application/json',
-                                'Content-Type': 'application/json',
-                                'Access-Control-Allow-Origin': '*'
+                                'Content-Type': 'application/json'
                             },
                             cache: false,
                             responseType: 'json'
@@ -34,8 +33,14 @@ var Apptus;
                     CRUDOperation.prototype.Update = function (url, data, onSuccess, onFailure) {
                         this.httpService.put(this.GetFullURL(url), data, this.config).then(onSuccess, onFailure);
                     };
-                    CRUDOperation.prototype.Create = function (url, data, onSuccess, onFailure) {
-                        this.httpService.post(this.GetFullURL(url), data, this.config).then(onSuccess, onFailure);
+                    CRUDOperation.prototype.Create = function (url, data) {
+                        this.httpService.defaults.headers.post["Content-Type"] = "application/json";
+                        return this.httpService.post(this.GetFullURL(url), JSON.stringify(data))
+                            .then(function (response) {
+                            return response;
+                        }, function (error) {
+                            return error;
+                        });
                     };
                     CRUDOperation.prototype.Delete = function (url, onSuccess, onFailure) {
                         this.httpService.delete(this.GetFullURL(url), this.config).then(onSuccess, onFailure);

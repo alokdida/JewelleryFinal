@@ -13,11 +13,18 @@ var Apptus;
                 DesignService.prototype.GetDesigns = function () {
                     return this.crudOperationService.Get("Design/").then(function (response) {
                         console.log(response);
-                        var jsonResonse = JSON.parse(response.data);
+                        var jsonResonse = response.data;
                         return jsonResonse;
                     }, function (error) {
                         console.log(error);
                         return null;
+                    });
+                };
+                DesignService.prototype.CreateDesign = function (design) {
+                    return this.crudOperationService.Create("Design/", design).then(function (response) {
+                        return true;
+                    }, function (error) {
+                        return false;
                     });
                 };
                 DesignService.$inject = ["CRUDOperationService", "$q"];
